@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.FAQPage"
+             xmlns:local="clr-namespace:App1"
+             Title="FAQ">
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.BackgroundColor>
+                #eee
+            </ScrollView.BackgroundColor>
+            <StackLayout Padding="20" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" x:Name="backgroundColour">
+                <Label FontSize="40" x:Name="textHeader">
+                    FAQ                      
+                </Label>
+                <BoxView BackgroundColor="Transparent"/>
+                <Label FontSize="25" x:Name="textColour">
+                    How do I purchase/rent a listed house?
+                </Label>
+                <Label FontSize="15" x:Name="textColour1">
+                    You cannot purchase or rent a listed house directly through this application however this application allows you to contact the agent who will happily help you.
+                </Label>
+                <BoxView BackgroundColor="Transparent"/>
+                <Label FontSize="25" x:Name="textColour2">
+                    Where does the data come from?
+                </Label>
+                <Label FontSize="15"  x:Name="textColour3">
+                    The listings in the application are taken directly from Zoopla and are provided live from their database.
+                </Label>
+                <BoxView BackgroundColor="Transparent"/>
+                <Label FontSize="25" x:Name="textColour4">
+                    How do I obtain more details about properties listed for sale/to rent?
+                </Label>
+                <Label FontSize="15" x:Name="textColour5">
+                    If you would like to request more details you can contact the agents directly on the properties you are interested in.
+                </Label>
+                <BoxView BackgroundColor="Transparent"/>
+                <Label FontSize="25" x:Name="textColour6">
+                    How does Timber make money?
+                </Label>
+                <Label FontSize="15" x:Name="textColour7">
+                    We don't make money, we do this for you for free! We are so passionate about provided opensource applications for your convenience.
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

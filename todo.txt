@@ -1,0 +1,36 @@
+Timber to do list
+
+Key:
+Oscar = (1)
+Matthew = (2)
+Joshua = (3)
+Marks = []
+
+Todo:
+
+Finish dark theme (1)
+Add ability to change font size (1)
+Image placeholder(2)
+
+Logo clicked
+Navbar clicked changed colour
+
+Slide / presentation
+
+
+DONE:
+    Prioritise favourited results [5] (2)
+    homePage filters (i.e num beds, price range) (2)
+    Search Page filter [5] (order by, house type)
+    AutoComplete size issue (2)
+	Display results in appropriate format [5] (1)
+	Paginate results (2)
+	Logo
+	Provide constant feedback throughout the app [5] (2)
+	Add to favourites [5] (1)
+	Share result*2 [5]
+	Store favourites between runs [3] (1)
+	Autocomplete search box (2)
+	Invalid input [5] (2)
+	Display additional details [2] (1)
+	Main slides added (3)	

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.AboutPage"
+             xmlns:local="clr-namespace:App1"
+             BackgroundColor="#2f4259"
+             Title="About us">
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.BackgroundColor>
+                #eee
+            </ScrollView.BackgroundColor>
+            <StackLayout Padding="20" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" x:Name="backgroundColour">
+                <Label FontSize="40" x:Name="header">
+                    About Us
+                </Label>
+                <BoxView BackgroundColor="Transparent"/>
+                <Label FontSize="25" x:Name="textColour">
+                    Who are we?
+                </Label>
+                <Label FontSize="15" x:Name="textColour1">
+                    Timber is a free to use property searching App. We provided live data on properties in your area. By using the homepage filter and search features you can quickly and easily find the properties you need.
+                </Label>
+                <BoxView BackgroundColor="Transparent"/>
+                <Image x:Name="logo"/>
+                <BoxView BackgroundColor="Transparent"/>
+                <Label FontSize="25" x:Name="textColour2">
+                    You mean the world to us!
+                </Label>
+                <Label FontSize="15" x:Name="textColour3">
+                    Here at Timber he pride ourselves in offering a simple free to use App but we do this all for you. We don't make any money, we just want to make you happy. We continue to add new features to help improve your experience. We hope you find the right property and the right price!
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

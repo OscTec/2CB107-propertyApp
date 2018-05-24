@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.HomePage"
+             xmlns:local="clr-namespace:App1"
+             Title="Property Search App"
+             x:Name="hibuy">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" x:Name="backgroundColour">
+                <Image x:Name="logo"/>
+                <BoxView BackgroundColor="Transparent"></BoxView>
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Row="0" Grid.Column="0"/>
+                        <Entry Placeholder="Enter city/postcode" 
+                               HorizontalTextAlignment="Center"
+                               TextChanged="autoComplete" 
+                               x:Name="homeSearch" 
+                               FontSize="25"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="StartAndExpand"
+                               Grid.Row="0" Grid.Column="1"/>
+                        <Image x:Name="searchImage" Grid.Row="0" Grid.Column="2"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout x:Name="citiesList"/>
+                <BoxView BackgroundColor="Transparent"/>
+                <Grid>
+                    <StackLayout Grid.Row="0" Grid.Column="0" >
+                        <Picker x:Name="MinPricePicker" IsVisible="False" SelectedIndexChanged="minPrice">
+                            <Picker.Items>
+                                <x:String>No Min</x:String>
+                                <x:String>£100</x:String>
+                                <x:String>£200</x:String>
+                                <x:String>£300</x:String>
+                                <x:String>£400</x:String>
+                                <x:String>£500</x:String>
+                                <x:String>£600</x:String>
+                                <x:String>£700</x:String>
+                                <x:String>£900</x:String>
+                                <x:String>£1000</x:String>
+                                <x:String>£10,000</x:String>
+                                <x:String>£20,000</x:String>
+                                <x:String>£30,000</x:String>
+                                <x:String>£40,000</x:String>
+                                <x:String>£50,000</x:String>
+                                <x:String>£60,000</x:String>
+                                <x:String>£70,000</x:String>
+                                <x:String>£80,000</x:String>
+                                <x:String>£90,000</x:String>
+                                <x:String>£100,000</x:String>
+                                <x:String>£110,000</x:String>
+                                <x:String>£120,000</x:String>
+                                <x:String>£125,000</x:String>
+                                <x:String>£130,000</x:String>
+                                <x:String>£140,000</x:String>
+                                <x:String>£150,000</x:String>
+                                <x:String>£160,000</x:String>
+                                <x:String>£170,000</x:String>
+                                <x:String>£180,000</x:String>
+                                <x:String>£190,000</x:String>
+                                <x:String>£200,000</x:String>
+                                <x:String>£210,000</x:String>
+                                <x:String>£220,000</x:String>
+                                <x:String>£230,000</x:String>
+                                <x:String>£240,000</x:String>
+                                <x:String>£250,000</x:String>
+                                <x:String>£275,000</x:String>
+                                <x:String>£300,000</x:String>
+                                <x:String>£325,000</x:String>
+                                <x:String>£350,000</x:String>
+                                <x:String>£375,000</x:String>
+                                <x:String>£400,000</x:String>
+                                <x:String>£425,000</x:String>
+                                <x:String>£450,000</x:String>
+                                <x:String>£475,000</x:String>
+                                <x:String>£500,000</x:String>
+                                <x:String>£550,000</x:String>
+                                <x:String>£600,000</x:String>
+                                <x:String>£650,000</x:String>
+                                <x:String>£700,000</x:String>
+                                <x:String>£750,000</x:String>
+                                <x:String>£800,000</x:String>
+                                <x:String>£850,000</x:String>
+                                <x:String>£900,000</x:String>
+                                <x:String>£950,000</x:String>
+                                <x:String>£1,000,000</x:String>
+                                <x:String>£1,100,000</x:String>
+                                <x:String>£1,200,000</x:String>
+                                <x:String>£1,300,000</x:String>
+                                <x:String>£1,400,000</x:String>
+                                <x:String>£1,500,000</x:String>
+                                <x:String>£1,600,000</x:String>
+                                <x:String>£1,700,000</x:String>
+                                <x:String>£1,800,000</x:String>
+                                <x:String>£1,900,000</x:String>
+                                <x:String>£2,000,000</x:String>
+                                <x:String>£2,100,000</x:String>
+                                <x:String>£2,200,000</x:String>
+                                <x:String>£2,300,000</x:String>
+                                <x:String>£2,400,000</x:String>
+                                <x:String>£2,500,000</x:String>
+                                <x:String>£2,750,000</x:String>
+                                <x:String>£3,000,000</x:String>
+                                <x:String>£3,250,000</x:String>
+                                <x:String>£3,500,000</x:String>
+                                <x:String>£3,750,000</x:String>
+                                <x:String>£4,000,000</x:String>
+                                <x:String>£4,250,000</x:String>
+                                <x:String>£4,500,000</x:String>
+                                <x:String>£4,750,000</x:String>
+                                <x:String>£5,000,000</x:String>
+                                <x:String>£5,500,000</x:String>
+                                <x:String>£6,000,000</x:String>
+                                <x:String>£6,500,000</x:String>
+                                <x:String>£7,000,000</x:String>
+                                <x:String>£7,500,000</x:String>
+                                <x:String>£8,000,000</x:String>
+                                <x:String>£8,500,000</x:String>
+                                <x:String>£9,000,000</x:String>
+                                <x:String>£9,500,000</x:String>
+                                <x:String>£10,000,000</x:String>
+                                <x:String>£12,500,000</x:String>
+                                <x:String>£15,000,000</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Frame OutlineColor="White" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MinPriceTapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="MinPickerLabel" Text="Min Price" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                </Label>
+                                <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" >
+                        <Picker x:Name="MaxPricePicker" IsVisible="False" SelectedIndexChanged="maxPrice">
+                            <Picker.Items>
+                                <x:String>No Min</x:String>
+                                <x:String>£100</x:String>
+                                <x:String>£200</x:String>
+                                <x:String>£300</x:String>
+                                <x:String>£400</x:String>
+                                <x:String>£500</x:String>
+                                <x:String>£600</x:String>
+                                <x:String>£700</x:String>
+                                <x:String>£900</x:String>
+                                <x:String>£1000</x:String>
+                                <x:String>£10,000</x:String>
+                                <x:String>£20,000</x:String>
+                                <x:String>£30,000</x:String>
+                                <x:String>£40,000</x:String>
+                                <x:String>£50,000</x:String>
+                                <x:String>£60,000</x:String>
+                                <x:String>£70,000</x:String>
+                                <x:String>£80,000</x:String>
+                                <x:String>£90,000</x:String>
+                                <x:String>£100,000</x:String>
+                                <x:String>£110,000</x:String>
+                                <x:String>£120,000</x:String>
+                                <x:String>£125,000</x:String>
+                                <x:String>£130,000</x:String>
+                                <x:String>£140,000</x:String>
+                                <x:String>£150,000</x:String>
+                                <x:String>£160,000</x:String>
+                                <x:String>£170,000</x:String>
+                                <x:String>£180,000</x:String>
+                                <x:String>£190,000</x:String>
+                                <x:String>£200,000</x:String>
+                                <x:String>£210,000</x:String>
+                                <x:String>£220,000</x:String>
+                                <x:String>£230,000</x:String>
+                                <x:String>£240,000</x:String>
+                                <x:String>£250,000</x:String>
+                                <x:String>£275,000</x:String>
+                                <x:String>£300,000</x:String>
+                                <x:String>£325,000</x:String>
+                                <x:String>£350,000</x:String>
+                                <x:String>£375,000</x:String>
+                                <x:String>£400,000</x:String>
+                                <x:String>£425,000</x:String>
+                                <x:String>£450,000</x:String>
+                                <x:String>£475,000</x:String>
+                                <x:String>£500,000</x:String>
+                                <x:String>£550,000</x:String>
+                                <x:String>£600,000</x:String>
+                                <x:String>£650,000</x:String>
+                                <x:String>£700,000</x:String>
+                                <x:String>£750,000</x:String>
+                                <x:String>£800,000</x:String>
+                                <x:String>£850,000</x:String>
+                                <x:String>£900,000</x:String>
+                                <x:String>£950,000</x:String>
+                                <x:String>£1,000,000</x:String>
+                                <x:String>£1,100,000</x:String>
+                                <x:String>£1,200,000</x:String>
+                                <x:String>£1,300,000</x:String>
+                                <x:String>£1,400,000</x:String>
+                                <x:String>£1,500,000</x:String>
+                                <x:String>£1,600,000</x:String>
+                                <x:String>£1,700,000</x:String>
+                                <x:String>£1,800,000</x:String>
+                                <x:String>£1,900,000</x:String>
+                                <x:String>£2,000,000</x:String>
+                                <x:String>£2,100,000</x:String>
+                                <x:String>£2,200,000</x:String>
+                                <x:String>£2,300,000</x:String>
+                                <x:String>£2,400,000</x:String>
+                                <x:String>£2,500,000</x:String>
+                                <x:String>£2,750,000</x:String>
+                                <x:String>£3,000,000</x:String>
+                                <x:String>£3,250,000</x:String>
+                                <x:String>£3,500,000</x:String>
+                                <x:String>£3,750,000</x:String>
+                                <x:String>£4,000,000</x:String>
+                                <x:String>£4,250,000</x:String>
+                                <x:String>£4,500,000</x:String>
+                                <x:String>£4,750,000</x:String>
+                                <x:String>£5,000,000</x:String>
+                                <x:String>£5,500,000</x:String>
+                                <x:String>£6,000,000</x:String>
+                                <x:String>£6,500,000</x:String>
+                                <x:String>£7,000,000</x:String>
+                                <x:String>£7,500,000</x:String>
+                                <x:String>£8,000,000</x:String>
+                                <x:String>£8,500,000</x:String>
+                                <x:String>£9,000,000</x:String>
+                                <x:String>£9,500,000</x:String>
+                                <x:String>£10,000,000</x:String>
+                                <x:String>£12,500,000</x:String>
+                                <x:String>£15,000,000</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Frame OutlineColor="White" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer  Tapped="MaxPriceTapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="MaxPickerLabel" Text="Max Price" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                </Label>
+                                <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="0" >
+                        <Picker x:Name="BedPicker" IsVisible="False" SelectedIndexChanged="minBed">
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Frame OutlineColor="White" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer  Tapped="BedTapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="BedPickerLabel" Text="Bedrooms" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                </Label>
+                                <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout  Grid.Row="1" Grid.Column="1" >
+                        <Picker x:Name="TypePicker" IsVisible="False" SelectedIndexChanged="propertyType">
+                            <Picker.Items>
+                                    <x:String>Houses </x:String>
+                                    <x:String>Flats</x:String>
+                                    <x:String>All</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Frame OutlineColor="White" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer  Tapped="TypeTapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="TypePickerLabel" Text="Property Type" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0"/>
+                                <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+                <Label x:Name="Error" HorizontalTextAlignment="Center" Margin="3"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Buy" Clicked="buySearch" Grid.Row="0" Grid.Column="0" x:Name="buyButton"/>
+                    <Button Text="Rent" Clicked="rentSearch" Grid.Row="0" Grid.Column="1"  x:Name="rentButton"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

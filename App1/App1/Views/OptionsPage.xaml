@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.OptionsPage"
+             xmlns:local="clr-namespace:App1"
+             Title="Settings">
+    <ContentPage.Content>
+        <StackLayout x:Name="backgroundColour">
+            <Label Text="Choose a font size"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                x:Name="fontLabel"/>
+            <StackLayout x:Name="fontButtons"/>
+            <Label Text="Choose a colour scheme to customise your experience"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                x:Name="colourLabel"/>
+            <StackLayout x:Name="buttonLayout"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

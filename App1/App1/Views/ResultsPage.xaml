@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.ResultsPage"
+             xmlns:local="clr-namespace:App1"
+             BackgroundColor="#2f4259">
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.BackgroundColor>
+                #eee
+            </ScrollView.BackgroundColor>
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="backgroundColour">
+                <StackLayout Padding="0,10,0,0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" >
+                    <ContentView Padding="20,0,0,0">
+                        <Label x:Name="searchTerm" FontSize="40"/>
+                    </ContentView>
+                    <ContentView Padding="20,0,0,0">
+                        <Label x:Name="resultCount"/>
+                    </ContentView>
+                    <BoxView x:Name="headerHR" HeightRequest="1"/>
+                    <StackLayout  IsVisible="false" x:Name="filters" Padding="20">
+                        <Grid>
+                            <StackLayout  Grid.Row="0" Grid.Column="0" >
+                                <Picker x:Name="SortPricePicker" IsVisible="False" SelectedIndexChanged="sortByPrice">
+                                    <Picker.Items>
+                                        <x:String>High - Low</x:String>
+                                        <x:String>Low - High</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                                <Frame OutlineColor="White" BackgroundColor="Transparent">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="PriceTapped"/>
+                                    </Frame.GestureRecognizers>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="PricePickerLabel" Text="Order by" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                        </Label>
+                                        <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout  Grid.Row="0" Grid.Column="1" >
+                                <Picker x:Name="SortOrderPicker" IsVisible="False" SelectedIndexChanged="sortByOrder">
+                                    <Picker.Items>
+                                        <x:String>Price</x:String>
+                                        <x:String>Age</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                                <Frame OutlineColor="White" BackgroundColor="Transparent">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OrderTapped"/>
+                                    </Frame.GestureRecognizers>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="OrderPickerLabel" Text="Order type" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                        </Label>
+                                        <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout  Grid.Row="1" Grid.Column="0" >
+                                <Picker x:Name="SortTypePicker" IsVisible="False" SelectedIndexChanged="sortByType">
+                                    <Picker.Items>
+                                        <x:String>Houses</x:String>
+                                        <x:String>Flats</x:String>
+                                        <x:String>All</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                                <Frame OutlineColor="White" BackgroundColor="Transparent">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TypeTapped"/>
+                                    </Frame.GestureRecognizers>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="OrderTypeLabel" Text="Property Type" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                         </Label>
+                                        <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout  Grid.Row="1" Grid.Column="1" >
+                                <Picker x:Name="SortFurnishedPicker" IsVisible="False" SelectedIndexChanged="sortByFurnished">
+                                    <Picker.Items>
+                                        <x:String>Furnished</x:String>
+                                        <x:String>Unfurnished</x:String>
+                                        <x:String>Part furnished</x:String>
+                                        <x:String>All</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                                <Frame OutlineColor="White" x:Name="FurnishedFrame"  BackgroundColor="Transparent">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="FurnishedTapped"/>
+                                    </Frame.GestureRecognizers>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="20" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="OrderFurnishedLabel" Text="Furnish Type" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="0">
+                                        </Label>
+                                        <Image Source="arrow.png" Grid.Column="1" Grid.Row="0"/>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <Button x:Name="clearButton" Grid.Row="2" Grid.Column="0" Clicked="clearFilter" Text="Clear"/>
+                            <Button x:Name="filterButton" Grid.Row="2" Grid.Column="1" Clicked="applyFilter" Text="Filter"/>
+                        </Grid>
+                    </StackLayout>
+                    <BoxView x:Name="headerHR2" HeightRequest="1"/>
+                    <BoxView BackgroundColor="Transparent" HeightRequest="8"></BoxView>
+                    <StackLayout  x:Name="searchTable" />
+                    <StackLayout>
+                        <ActivityIndicator IsRunning="true" IsVisible="false" x:Name="moreLoader"/>
+                    </StackLayout>
+                    <StackLayout x:Name="showMore"/>                    
+                 </StackLayout>
+                <StackLayout IsVisible="true" 
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" x:Name="loader">
+                    <ActivityIndicator IsRunning="true" Color ="#3fc5d4" x:Name="resultsLoader"/>
+                    <Label Text="Search..." HorizontalOptions="Center" x:Name="loadingSearchText"/>
+                    <Label Text="Please wait" HorizontalOptions="Center" x:Name="loadingText"/>
+                </StackLayout>                
+            </AbsoluteLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

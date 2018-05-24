@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.DetailsPage"
+             Title="Details">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="backgroundColour">
+                <Image x:Name="imageURL" VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" WidthRequest="600"
+                       HeightRequest="300" MinimumWidthRequest="600" MinimumHeightRequest="300"/>
+                <StackLayout Padding="20">
+                    <Label Text="Price" x:Name="price" Margin="5, 0, 0, 0"/>
+                    <Label x:Name="shortDescription" Margin="5, 0, 0, 0"/>
+                    <Label Text="location" x:Name="location" Margin="5, 0, 0, 0"/>
+                    <Label x:Name="propertyType" Margin="5, 0, 0, 0"/>
+                    <Label x:Name="furnished" IsVisible="false" Margin="5, 0, 0, 0"/>
+                    <BoxView/>
+                    <Label Text="Description and Features" FontAttributes="Bold" x:Name="textColour" Margin="5, 0, 0, 0"/>                
+                    <Label x:Name="description" Margin="5, 0, 5, 0"/>
+                    <Button Text="Show description" Clicked="descBtn" x:Name="descriptionBtn" Margin="5, 0, 5, 0"/>
+                 </StackLayout>
+                <StackLayout Padding="20">
+                    <Frame x:Name="mapsFrame">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="mapsIcon" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30"/>
+                            <Label x:Name="mapsLabel" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <BoxView BackgroundColor="Transparent"/>
+                <StackLayout x:Name="detailsStack">
+                    <Label x:Name="dataHeader"/>
+                    <Frame x:Name="educationFrame">
+                         <Label x:Name="education" HorizontalTextAlignment="Center"/>
+                     </Frame>
+                     <Frame x:Name="councilFrame">
+                        <Label x:Name="council" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center"/>
+                     </Frame>
+                     <Frame x:Name="crimeFrame">
+                        <Label x:Name="crime" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                     </Frame>
+                     <Frame x:Name="peopleFrame">
+                        <Label x:Name="people" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                      </Frame>
+                </StackLayout>
+                <Frame Padding="20" x:Name="contactFrame">
+                <StackLayout>
+                        <Label Text="Listed by" x:Name="textColour1" Margin="5, 0, 0, 0"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="agentName" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Margin="5, 0, 0, 0"/>
+                            <Image x:Name="agentLogo" Grid.Row="0" Grid.Column="1" Aspect="AspectFit" Grid.RowSpan="2"/>
+                            <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" x:Name="agentNumber" Margin="5, 0, 0, 0"/>
+                        </Grid>
+                        <BoxView BackgroundColor="Transparent" HeightRequest="5"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Text="Share" x:Name="share" Clicked="shareHouse" Grid.Row="0" Grid.Column="0" Margin="5, 0, 0, 5"/>
+                            <Button Text="Call agent" x:Name="callAgent" Clicked="phoneCallClicked" Grid.Row="0" Grid.Column="1" Margin="0, 0, 5, 5"/>
+                        </Grid>                    
+                </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

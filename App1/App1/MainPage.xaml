@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu"  BackgroundColor="Transparent">
+            <Grid BackgroundColor="Transparent"  RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid BackgroundColor="Transparent"/>
+                <StackLayout Grid.Row="1" Padding="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="backgroundColour">
+                    <Image Aspect="AspectFit" Source="logo"/>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Spacing="15">
+                    <ListView x:Name="navigationDrawerList"
+                            RowHeight="60"
+                            SeparatorVisibility="None"                            
+                            ItemSelected="OnMenuItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <!-- Main design for our menu items -->
+                                        <StackLayout VerticalOptions="FillAndExpand"
+                                                    Orientation="Horizontal"
+                                                    Padding="20,10,0,10"
+                                                    Spacing="20">
+                                            <Image Source="{Binding Icon}"
+                                                    WidthRequest="30"
+                                                    HeightRequest="30"
+                                                    VerticalOptions="Center" />
+                                            <Label Text="{Binding Title}"
+                                                    FontSize="Medium"
+                                                    VerticalOptions="Center"
+                                                   TextColor="{Binding colour}"/>
+                                        </StackLayout>
+                                        <BoxView HeightRequest="1" BackgroundColor="{Binding gapColour}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
